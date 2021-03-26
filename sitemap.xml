@@ -2,52 +2,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jaylp33.github.io/%E4%B9%85%E4%B9%85%E7%9A%84/</loc>
+    
+    <lastmod>2021-03-26</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jaylp33.github.io/hositing/</loc>
     
-    <lastmod>2020-05-25T11:27:23.000Z</lastmod>
+    <lastmod>2021-03-26</lastmod>
     
   </url>
   
   <url>
     <loc>https://jaylp33.github.io/Python%E5%95%9F%E7%A8%8B/</loc>
     
-    <lastmod>2020-04-25T10:27:06.543Z</lastmod>
+    <lastmod>2020-04-25</lastmod>
     
   </url>
   
   <url>
     <loc>https://jaylp33.github.io/first/</loc>
     
-    <lastmod>2020-04-24T15:03:46.577Z</lastmod>
+    <lastmod>2020-04-24</lastmod>
     
   </url>
   
   <url>
     <loc>https://jaylp33.github.io/tags/index.html</loc>
     
-    <lastmod>2020-04-24T14:28:07.498Z</lastmod>
+    <lastmod>2020-04-24</lastmod>
     
   </url>
   
   <url>
     <loc>https://jaylp33.github.io/categories/index.html</loc>
     
-    <lastmod>2020-04-24T14:27:51.340Z</lastmod>
+    <lastmod>2020-04-24</lastmod>
     
   </url>
   
   <url>
     <loc>https://jaylp33.github.io/Learning/index.html</loc>
     
-    <lastmod>2020-04-24T14:19:38.419Z</lastmod>
+    <lastmod>2020-04-24</lastmod>
     
   </url>
   
   <url>
     <loc>https://jaylp33.github.io/about/index.html</loc>
     
-    <lastmod>2020-04-24T13:47:03.320Z</lastmod>
+    <lastmod>2020-04-24</lastmod>
     
+  </url>
+  
+
+  <url>
+    <loc>https://jaylp33.github.io/</loc>
+    <lastmod>2021-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://jaylp33.github.io/tags/Python/</loc>
+    <lastmod>2021-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylp33.github.io/tags/Coding/</loc>
+    <lastmod>2021-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylp33.github.io/tags/%E6%84%9F%E6%83%85/</loc>
+    <lastmod>2021-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://jaylp33.github.io/categories/Learning/</loc>
+    <lastmod>2021-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylp33.github.io/categories/%E6%84%9F%E6%83%85/</loc>
+    <lastmod>2021-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jaylp33.github.io/categories/Learning/Python/</loc>
+    <lastmod>2021-03-26</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
   
 </urlset>
