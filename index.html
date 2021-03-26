@@ -21,9 +21,9 @@
   </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="Gary&#39;s 初新者之路">
+<meta property="og:title" content="Gary in Syd">
 <meta property="og:url" content="https://jaylp33.github.io/index.html">
-<meta property="og:site_name" content="Gary&#39;s 初新者之路">
+<meta property="og:site_name" content="Gary in Syd">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="Gary Tsai">
 <meta name="twitter:card" content="summary">
@@ -41,7 +41,7 @@
   };
 </script>
 
-  <title>Gary's 初新者之路</title>
+  <title>Gary in Syd</title>
   
 
 
@@ -95,7 +95,7 @@
 
     <a href="/myBlog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">Gary's 初新者之路</h1>
+      <h1 class="site-title">Gary in Syd</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -160,7 +160,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://jaylp33.github.io/secondTry/">
+    <link itemprop="mainEntityOfPage" href="https://jaylp33.github.io/hositing/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/myBlog/images/avatar.gif">
@@ -169,12 +169,12 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gary's 初新者之路">
+      <meta itemprop="name" content="Gary in Syd">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/myBlog/secondTry/" class="post-title-link" itemprop="url">secondTry</a>
+            <a href="/myBlog/hositing/" class="post-title-link" itemprop="url">hositing</a>
         </h2>
 
         <div class="post-meta">
@@ -183,10 +183,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-04-25 10:24:21 / Modified: 10:26:15" itemprop="dateCreated datePublished" datetime="2020-04-25T10:24:21+10:00">2020-04-25</time>
+              <time title="Created: 2020-05-02 15:47:16" itemprop="dateCreated datePublished" datetime="2020-05-02T15:47:16+10:00">2020-05-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-05-25 21:27:23" itemprop="dateModified" datetime="2020-05-25T21:27:23+10:00">2020-05-25</time>
+              </span>
 
           
   
@@ -197,8 +203,8 @@
       </span>
       <span class="post-meta-item-text">Disqus: </span>
     
-    <a title="disqus" href="/myBlog/secondTry/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="secondTry/" itemprop="commentCount"></span>
+    <a title="disqus" href="/myBlog/hositing/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="hositing/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -213,9 +219,127 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="This-is-the-second-try"><a href="#This-is-the-second-try" class="headerlink" title="This is the second try"></a>This is the second try</h1><h2 id="just-looking"><a href="#just-looking" class="headerlink" title="just looking"></a>just looking</h2><blockquote>
-<p>Try the commet</p>
+          <p>Upgrade<br>GaryTsai</p>
+<h1 id="關於-JS-Hosting-提升"><a href="#關於-JS-Hosting-提升" class="headerlink" title="關於 JS Hosting(提升)"></a>關於 JS Hosting(提升)</h1><blockquote>
+<p>什麼是 hoisting？</p>
 </blockquote>
+<p>我們都知道在 Javascript 中，如果使用未宣告的變數是這樣的指令：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">var</span> a;</span><br></pre></td></tr></table></figure>
+
+<p>JavaScript 有一個特性在一開始載入時都會先找到所有「變數」與「函式 function」，並完成宣告，才會開始其他執行動作。<br>所以即使執行程式在變數之前，也都找得到變數，即稱為「Hosting」。</p>
+<blockquote>
+<p><strong>只有變數宣告可提升，賦值不會</strong></p>
+</blockquote>
+<p>var a<br>console.log(a) // undefined<br>a = 5<br><strong>函式帶的參數，即視為變數</strong><br>(如果沒有參數，則以函式內的賦值優先)<br>function test(v){<br>console.log(v) //10，因為參數帶入 10，故等同於先宣告了 var v = 10<br>var v = 3<br>}<br>test(10)<br><strong>函式 function 的宣告優先權高於變數</strong><br>console.log(a) //[Function: a]<br>var a<br>function a(){}<br><strong>用 let 與 const 宣告的變數也會提升，但未賦值前如果使用該變數會出錯</strong><br>let 與 const 有 hoisting，與 var 的差別在於提升之後，var 宣告的變數會被初始化為 undefined，而 let 與 const 的宣告不會被初始化為 undefined，而且如果你在「賦值之前」就存取它，就會拋出錯誤。<br>在「提升之後」以及「賦值之前」這段「期間」，如果你存取它就會拋出錯誤，而這段期間就稱做是 TDZ(Temporal Dead Zone)。<br>var a = 10<br>function test(){<br>console.log(a) // ReferenceError: a is not defined<br>let a<br>}<br>test()<br>Hoisting 的好處<br>Javascript，先宣告變數與函式再使用<br>函式可互相呼叫(不論宣告的前後順序)<br>hoisting 到底是怎麼運作的？<br>Execution Contexts（以下簡稱 EC）， 每當你進入一個 function 的時候，就會產生一個 EC，裡面儲存跟這個 function 有關的一些資訊，並且把這個 EC 放到 stack 裡面，當 function 執行完以後，就會把 EC 給 pop 出來。<br>每個 EC 都會有相對應的 variable object（以下簡稱 VO），在裡面宣告的變數跟函式都會被加進 VO 裡面，如果是 function，那參數也會被加到 VO 裡。<br>對於 function 的參數，它會直接被放到 VO 裡面去，如果有些參數沒有值的話，那它的值會被初始化成 undefined。 如果 VO 裡面找不到，會透過 scope chain 不斷往上尋找，如果每一層都找不到就會拋出錯誤。<br>在進入 EC 的時候(跑 function 程式碼前)，會按照以下順序把東西放到 VO 裡面，新的會覆蓋掉舊的<br>function 的參數：傳什麼進來就是什麼，沒有值的設成 undefined<br>function 宣告放到 VO 裡，如果已經有同名的就覆蓋掉<br>變數宣告放到 VO 裡，如果已經有同名的則忽略<br>參考資料： <a href="https://github.com/aszx87410/blog/issues/34" target="_blank" rel="noopener">https://github.com/aszx87410/blog/issues/34</a> (大推)</p>
+<p>Hosting</p>
+<p>Sinyi’ Note<br>WRITTEN BY</p>
+<p>Sinyi’ Note<br>Follow<br>前端路迢迢，給自己的筆記一點一滴累積著，很短，很簡單，路還很長<br>Write the first response<br>More From Medium<br>The American Economy is Dying<br>umair haque in Eudaimonia and Co</p>
+<p>Machine Learning Engineers Will Not Exist In 10 Years.<br>Luke Posey in Towards Data Science</p>
+<p>This Is How Much YouTube Paid Me for My 1,000,000 Viewed Video<br>Shelby Church in OneZero</p>
+<p>Ellen DeGeneres Was Publicly Accused of Being a Generally Mean Person<br>Gillian Sisley in The Clever Quill</p>
+<p>Georgia’s Experiment in Human Sacrifice<br>The Atlantic in The Atlantic</p>
+<p>Can You Get the Coronavirus Twice?<br>Dana G Smith in Elemental</p>
+<p>What Alcohol Does to a Stressed-Out Brain<br>Markham Heid in Elemental</p>
+<p>Coronavirus: How to Do Testing and Contact Tracing<br>Tomas Pueyo</p>
+<p>Discover Medium<br>Welcome to a place where words matter. On Medium, smart voices and original ideas take center stage - with no ads in sight. Watch<br>Make Medium yours<br>Follow all the topics you care about, and we’ll deliver the best stories for you to your homepage and inbox. Explore<br>Become a member<br>Get unlimited access to the best stories on Medium — and support writers while you’re at it. Just $5/month. Upgrade<br>About<br>Help<br>Legal</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://jaylp33.github.io/Python%E5%95%9F%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/myBlog/images/avatar.gif">
+      <meta itemprop="name" content="Gary Tsai">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gary in Syd">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/myBlog/Python%E5%95%9F%E7%A8%8B/" class="post-title-link" itemprop="url">Python啟程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-04-25 10:24:21 / Modified: 20:27:06" itemprop="dateCreated datePublished" datetime="2020-04-25T10:24:21+10:00">2020-04-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myBlog/categories/Learning/" itemprop="url" rel="index"><span itemprop="name">Learning</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/myBlog/categories/Learning/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/myBlog/Python%E5%95%9F%E7%A8%8B/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="Python啟程/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="從0開始的Python之旅"><a href="#從0開始的Python之旅" class="headerlink" title="從0開始的Python之旅"></a>從0開始的Python之旅</h1><p>Python是由<em>Guido van Rossum</em>於1991年創造的，網路上有很多相關資訊，在這裡就不多說了</p>
+<p>網路上都說，Python對新手非常的友好。易於學習，這是因為Python編程思維幾乎完全和生活中的思維習慣一致，你可以跟Python說<del>人話</del>他也能夠明白<code>前提是你要會英文</code>。</p>
+<p>在我的Blog也只是紀載了我自己學習的過程。並不是100%正確。<br>如果哪邊錯誤了可以留言告訴我.</p>
+<h2 id="第一步肯定是要先安裝Python拉"><a href="#第一步肯定是要先安裝Python拉" class="headerlink" title="第一步肯定是要先安裝Python拉"></a>第一步肯定是要先安裝Python拉</h2><p>找到他的官網</p>
+<p><img src="./Python%E5%95%9F%E7%A8%8B/python.png" alt="Python"></p>
+<blockquote>
+<p>沒什麼好說的 安裝然後 一路下一步到最後</p>
+</blockquote>
+<h2 id="找一個自己喜歡的編成工具"><a href="#找一個自己喜歡的編成工具" class="headerlink" title="找一個自己喜歡的編成工具"></a>找一個自己喜歡的編成工具</h2><ul>
+<li>Visual Studio Code (這個超棒<del>畢竟自己用了好久</del>)</li>
+<li>Sublime Text 3</li>
+<li>Pycharm (<del>貴</del>) </li>
+</ul>
 
       
     </div>
@@ -244,7 +368,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Gary's 初新者之路">
+      <meta itemprop="name" content="Gary in Syd">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -398,7 +522,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
