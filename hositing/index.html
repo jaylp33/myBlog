@@ -28,7 +28,7 @@
 <meta property="og:description" content="關於 JS Hosting(提升) 什麼是 hoisting？  我們都知道在 Javascript 中，如果使用未宣告的變數是這樣的指令： 12console.log(a); &#x2F;&#x2F; undefinedvar a;  JavaScript 有一個特性在一開始載入時都會先找到所有「變數」與「函式 function」，並完成宣告，才會開始其他執行動作。所以即使執行程式在變數之前，也都找得到變數，即稱為">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-02T05:47:16.000Z">
-<meta property="article:modified_time" content="2021-03-26T11:20:53.413Z">
+<meta property="article:modified_time" content="2021-03-26T12:31:48.970Z">
 <meta property="article:author" content="Gary Tsai">
 <meta property="article:tag" content="Coding">
 <meta name="twitter:card" content="summary">
@@ -196,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-26 22:20:53" itemprop="dateModified" datetime="2021-03-26T22:20:53+11:00">2021-03-26</time>
+                <time title="Modified: 2021-03-26 23:31:48" itemprop="dateModified" datetime="2021-03-26T23:31:48+11:00">2021-03-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -244,17 +244,7 @@
 <p><strong>只有變數宣告可提升，賦值不會</strong></p>
 </blockquote>
 <p>var a<br>console.log(a) // undefined<br>a = 5<br><strong>函式帶的參數，即視為變數</strong><br>(如果沒有參數，則以函式內的賦值優先)<br>function test(v){<br>console.log(v) //10，因為參數帶入 10，故等同於先宣告了 var v = 10<br>var v = 3<br>}<br>test(10)<br><strong>函式 function 的宣告優先權高於變數</strong><br>console.log(a) //[Function: a]<br>var a<br>function a(){}<br><strong>用 let 與 const 宣告的變數也會提升，但未賦值前如果使用該變數會出錯</strong><br>let 與 const 有 hoisting，與 var 的差別在於提升之後，var 宣告的變數會被初始化為 undefined，而 let 與 const 的宣告不會被初始化為 undefined，而且如果你在「賦值之前」就存取它，就會拋出錯誤。<br>在「提升之後」以及「賦值之前」這段「期間」，如果你存取它就會拋出錯誤，而這段期間就稱做是 TDZ(Temporal Dead Zone)。<br>var a = 10<br>function test(){<br>console.log(a) // ReferenceError: a is not defined<br>let a<br>}<br>test()<br>Hoisting 的好處<br>Javascript，先宣告變數與函式再使用<br>函式可互相呼叫(不論宣告的前後順序)<br>hoisting 到底是怎麼運作的？<br>Execution Contexts（以下簡稱 EC）， 每當你進入一個 function 的時候，就會產生一個 EC，裡面儲存跟這個 function 有關的一些資訊，並且把這個 EC 放到 stack 裡面，當 function 執行完以後，就會把 EC 給 pop 出來。<br>每個 EC 都會有相對應的 variable object（以下簡稱 VO），在裡面宣告的變數跟函式都會被加進 VO 裡面，如果是 function，那參數也會被加到 VO 裡。<br>對於 function 的參數，它會直接被放到 VO 裡面去，如果有些參數沒有值的話，那它的值會被初始化成 undefined。 如果 VO 裡面找不到，會透過 scope chain 不斷往上尋找，如果每一層都找不到就會拋出錯誤。<br>在進入 EC 的時候(跑 function 程式碼前)，會按照以下順序把東西放到 VO 裡面，新的會覆蓋掉舊的<br>function 的參數：傳什麼進來就是什麼，沒有值的設成 undefined<br>function 宣告放到 VO 裡，如果已經有同名的就覆蓋掉<br>變數宣告放到 VO 裡，如果已經有同名的則忽略<br>參考資料： <a href="https://github.com/aszx87410/blog/issues/34" target="_blank" rel="noopener">https://github.com/aszx87410/blog/issues/34</a> (大推)</p>
-<p>Hosting</p>
-<p>Sinyi’ Note<br>WRITTEN BY</p>
-<p>Sinyi’ Note<br>Follow<br>前端路迢迢，給自己的筆記一點一滴累積著，很短，很簡單，路還很長<br>Write the first response<br>More From Medium<br>The American Economy is Dying<br>umair haque in Eudaimonia and Co</p>
-<p>Machine Learning Engineers Will Not Exist In 10 Years.<br>Luke Posey in Towards Data Science</p>
-<p>This Is How Much YouTube Paid Me for My 1,000,000 Viewed Video<br>Shelby Church in OneZero</p>
-<p>Ellen DeGeneres Was Publicly Accused of Being a Generally Mean Person<br>Gillian Sisley in The Clever Quill</p>
-<p>Georgia’s Experiment in Human Sacrifice<br>The Atlantic in The Atlantic</p>
-<p>Can You Get the Coronavirus Twice?<br>Dana G Smith in Elemental</p>
-<p>What Alcohol Does to a Stressed-Out Brain<br>Markham Heid in Elemental</p>
-<p>Coronavirus: How to Do Testing and Contact Tracing<br>Tomas Pueyo</p>
-<p>Discover Medium<br>Welcome to a place where words matter. On Medium, smart voices and original ideas take center stage - with no ads in sight. Watch<br>Make Medium yours<br>Follow all the topics you care about, and we’ll deliver the best stories for you to your homepage and inbox. Explore<br>Become a member<br>Get unlimited access to the best stories on Medium — and support writers while you’re at it. Just $5/month. Upgrade<br>About<br>Help<br>Legal</p>
+<p>前端路迢迢，給自己的筆記一點一滴累積著，很短，很簡單，路還很長</p>
 
     </div>
 
@@ -277,8 +267,8 @@
       <i class="fa fa-chevron-left"></i> Python啟程
     </a></div>
       <div class="post-nav-item">
-    <a href="/myBlog/%E4%B9%85%E4%B9%85%E7%9A%84/" rel="next" title="gary">
-      gary <i class="fa fa-chevron-right"></i>
+    <a href="/myBlog/iCalledItNull/" rel="next" title="V-1">
+      V-1 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
